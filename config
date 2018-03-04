@@ -380,11 +380,11 @@ set $firstMonitor DVI-I-1
 #set $firstMonitor DVI-0
 #set $secondMonitor DVI-1
 
-workspace 1 output $firstMonitor
-workspace 2 output $firstMonitor
-workspace 3 output $firstMonitor
-workspace 4 output $firstMonitor
-workspace 5 output $firstMonitor
+#workspace 1 output $firstMonitor
+#workspace 2 output $firstMonitor
+#workspace 3 output $firstMonitor
+#workspace 4 output $firstMonitor
+#workspace 5 output $firstMonitor
 #workspace 6 output $secondMonitor
 #workspace 7 output $secondMonitor
 #workspace 8 output $secondMonitor
@@ -642,7 +642,7 @@ bindsym mod1+Down exec variety --resume
 ################### MODE_SYSTEM ######################
 
 
-bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+p mode "$mode_system"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -661,8 +661,8 @@ mode "$mode_system" {
 
 ################### AUDIO ######################
 
-bindsym XF86MonBrightnessUp exec "/home/tj/brightness.sh +5"
-bindsym XF86MonBrightnessDown exec "/home/tj/brightness.sh -5"
+bindsym XF86MonBrightnessUp exec --no-startup-id "/home/tj/brightness.sh +5"
+bindsym XF86MonBrightnessDown exec --no-startup-id "/home/tj/brightness.sh -5"
 
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
@@ -949,8 +949,8 @@ exec_always compton --config ~/.config/i3/compton.conf
 # gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/gnome-terminal
 
 #bindsym $mod+Return exec gnome-terminal;focus
-bindsym $mod+Return exec i3-sensible-terminal;focus
-#bindsym $mod+Return exec terminator;focus
+#bindsym $mod+Return exec i3-sensible-terminal;focus
+bindsym $mod+Return exec terminator;focus
 #bindsym $mod+Return exec mate-terminal;focus
 #bindsym $mod+Return exec xfce4-terminal;focus
 
@@ -962,7 +962,7 @@ bindsym control+mod1+t exec gnome-terminal; focus
 
 
 #System monitor
-bindsym control+Shift+Escape exec gnome-system-monitor;focus
+#bindsym control+Shift+Escape exec gnome-system-monitor;focus
 #bindsym control+Shift+Escape exec mate-system-monitor;focus
 #bindsym control+Shift+Escape exec xfce4-taskmanager;focus
 
@@ -976,8 +976,8 @@ bindsym control+Shift+Escape exec gnome-system-monitor;focus
 #workspace 2 related
 #bindsym $mod+F2 exec subl;workspace 2;focus
 #bindsym control+mod1+w exec subl;workspace 2;focus
-bindsym $mod+F2 exec subl3;workspace 2;focus
-bindsym control+mod1+w exec subl3;workspace 2;focus
+#bindsym $mod+F2 exec subl3;workspace 2;focus
+#bindsym control+mod1+w exec subl3;workspace 2;focus
 
 #workspace 8 related
 bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
@@ -987,7 +987,7 @@ bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
 
 #file managers
 
-exec nemo --no-desktop
+#exec nemo --no-desktop
 #exec nautilus --no-desktop
 #exec caja
 #exec thunar
@@ -1013,7 +1013,7 @@ bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 
 #sublime-text
 #exec subl
-exec subl3
+#exec subl3
 
 #Authentication dialog
 
@@ -1029,15 +1029,20 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec mintupdate-launcher
 
 # Arch
-exec pamac-tray
+#exec pamac-tray
 
 # bluetooth
-exec blueberry-tray
+#exec blueberry-tray
 #exec --no-startup-id blueman-applet
 
 # network
 #antergos
 exec --no-startup-id nm-applet
 
+exec --no-startup-id feh --bg-fill ~/wallpaper.png
+
 #install this program for applet
 #exec network-manager-applet
+
+exec workspace 1
+exec i3lock -i ~/lockwallpaper.png
