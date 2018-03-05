@@ -729,10 +729,10 @@ exec unclutter
 
 bar {
 
-    height 25
+    height 20
     workspace_buttons yes
     # font pango:DroidSansMono 13
-    font pango:Noto Sans 14
+    font pango:Fira Mono 10
     #you can change the place via xrandr
     #output DVI-0
 
@@ -881,7 +881,7 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
 for_window [class="^.*"] border pixel 5
 gaps inner 10 
-gaps outer 5
+#gaps outer 5
 #smart_gaps on
 #smart_borders on
 
@@ -1008,6 +1008,9 @@ bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 #bindsym control+mod1+b exec caja;workspace 8;focus
 #bindsym control+mod1+b exec thunar;workspace 8;focus
 
+# screenshot
+bindsym $mod+Shift+s exec --no-startup-id gnome-screenshot -af /tmp/scrot.png && xclip -selection clipboard -t image/png -i /tmp/scrot.png && rm /tmp/scrot.png
+bindsym $mod+Shift+f exec --no-startup-id gnome-screenshot -f /tmp/scrot.png && xclip -selection clipboard -t image/png -i /tmp/scrot.png && rm /tmp/scrot.png
 
 # USER APPLICATIONS TO START AT BOOT
 
