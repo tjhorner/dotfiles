@@ -743,7 +743,7 @@ bar {
     # this is the standard statusbar with my personal settings
 
 #status_command i3status
-status_command i3status -c ~/.config/i3/i3status.conf
+status_command i3status -c ~/.config/i3/i3status.conf | ~/misc/i3spotifystatus/pystatus.py
 
 
 # OPTION 2 : i3blocks
