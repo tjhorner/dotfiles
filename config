@@ -664,6 +664,9 @@ mode "$mode_system" {
 bindsym XF86MonBrightnessUp exec --no-startup-id "/home/tj/brightness.sh +5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "/home/tj/brightness.sh -5"
 
+bindsym XF86KbdBrightnessUp exec --no-startup-id "/home/tj/scripts/keyboard-backlight.py --up 10"
+bindsym XF86KbdBrightnessDown exec --no-startup-id "/home/tj/scripts/keyboard-backlight.py --down 10"
+
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
 bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
@@ -1041,11 +1044,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # network
 #antergos
 exec --no-startup-id nm-applet
+exec --no-startup-id blueberry-tray
 
 exec --no-startup-id feh --bg-fill ~/wallpaper.png
 
 #install this program for applet
 #exec network-manager-applet
+
+exec --no-startup-id ~/scripts/configure-monitors.sh
 
 exec workspace 1
 exec i3lock -i ~/lockwallpaper.png
