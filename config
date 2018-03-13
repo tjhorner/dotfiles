@@ -345,7 +345,7 @@ font pango:Fira Mono Regular 12
 ################### MENU ######################
 
 # start dmenu
-bindsym $mod+d exec dmenu_run -fn 'FiraMonoRegular:bold:pixelsize=18' 
+bindsym $mod+d exec dmenu_run -fn "Fira Mono:bold"
 
 # start j4-dmenu (based on desktop files in /usr/share/applications)
 # https://github.com/enkore/j4-dmenu-desktop
@@ -409,7 +409,7 @@ bindsym $mod+Shift+at move container to workspace 2; workspace 2
 bindsym $mod+Shift+numbersign move container to workspace 3; workspace 3
 bindsym $mod+Shift+dollar move container to workspace 4; workspace 4
 bindsym $mod+Shift+percent move container to workspace 5; workspace 5
-bindsym $mod+Shift+ascicircum move container to workspace 6; workspace 6
+bindsym $mod+Shift+asciicircum move container to workspace 6; workspace 6
 bindsym $mod+Shift+ampersand move container to workspace 7; workspace 7
 bindsym $mod+Shift+asterisk move container to workspace 8; workspace 8
 bindsym $mod+Shift+parenleft move container to workspace 9; workspace 9
@@ -1044,9 +1044,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # network
 #antergos
 exec --no-startup-id nm-applet
-exec --no-startup-id blueberry-tray
+exec --no-startup-id blueman-applet
 
-exec --no-startup-id feh --bg-fill ~/wallpaper.png
+exec --no-startup-id feh --bg-fill -z ~/wallpapers
 
 #install this program for applet
 #exec network-manager-applet
